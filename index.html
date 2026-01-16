@@ -833,8 +833,11 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="terms.html">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="privacy.html">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i>
+      <a href="#" onclick="openCookieSettings()">Cookie Settings</a>
+    </li>
             </ul>
           </div>
 
@@ -894,6 +897,95 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
    <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+  function setConsent(consent) {
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+  }
+
+  function getConsent() {
+    return JSON.parse(localStorage.getItem("cookieConsent"));
+  }
+
+  function acceptAllCookies() {
+    setConsent({
+      necessary: true,
+      analytics: true,
+      functional: true,
+      marketing: true
+    });
+    hideBanner();
+    loadConsentedScripts();
+  }
+
+  function rejectAllCookies() {
+    setConsent({
+      necessary: true,
+      analytics: false,
+      functional: false,
+      marketing: false
+    });
+    hideBanner();
+  }
+
+  function openCookieSettings() {
+    document.getElementById("cookie-modal").style.display = "block";
+  }
+
+  function closeCookieSettings() {
+    document.getElementById("cookie-modal").style.display = "none";
+  }
+
+  function saveCookiePreferences() {
+    setConsent({
+      necessary: true,
+      analytics: document.getElementById("analyticsCookies").checked,
+      functional: document.getElementById("functionalCookies").checked,
+      marketing: document.getElementById("marketingCookies").checked
+    });
+    closeCookieSettings();
+    hideBanner();
+    loadConsentedScripts();
+  }
+
+  function hideBanner() {
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  function loadConsentedScripts() {
+    const consent = getConsent();
+    if (!consent) return;
+
+    if (consent.analytics) loadGoogleAnalytics();
+    if (consent.marketing) loadMarketingPixels();
+  }
+
+  function loadGoogleAnalytics() {
+    if (window.gaLoaded) return;
+    window.gaLoaded = true;
+
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID";
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    };
+  }
+
+  function loadMarketingPixels() {}
+
+  window.onload = function () {
+    if (!getConsent()) {
+      document.getElementById("cookie-banner").style.display = "block";
+    } else {
+      loadConsentedScripts();
+    }
+  };
+</script>
    
      <script>
      
@@ -926,6 +1018,27 @@
             });
           }
     </script>
+
+<div id="cookie-banner" style="
+position: fixed;
+bottom: 0;
+width: 100%;
+background: #222;
+color: #fff;
+padding: 15px;
+z-index: 9999;
+display: none;">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <p style="margin:0;font-size:14px;">
+      We use cookies to make our website work, improve performance, and analyse usage.
+      <a href="cookies.html" style="color:#f9c74f;">Learn more</a>
+    </p>
+    <div class="mt-2 mt-md-0">
+      <button class="btn btn-success btn-sm me-2" onclick="acceptCookies()">Accept</button>
+      <button class="btn btn-outline-light btn-sm" onclick="rejectCookies()">Reject</button>
+    </div>
+  </div>
+</div>R
 
 </body>
 
