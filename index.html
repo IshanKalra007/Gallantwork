@@ -38,8 +38,7 @@
 
       <!--<h1 class="logo me-auto"><a href="index.html">GMUK</a></h1>-->
         <h1 class="logo me-auto">
-            
-                <img src="gallant-logo.png" ></img>
+            <img src="gallant-logo.png" alt="Gallant Logo">
         </h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -207,7 +206,7 @@
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span>Digital Transformation:    <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      We help businesses embrace digital transformation by implementing innovative technologies and strategies. By leveraging cloud computing, data analytics, and emerging technologies, we enable organizations to adapt to changing marketv dynamics and unlock new opportunities.
+                      We help businesses embrace digital transformation by implementing innovative technologies and strategies. By leveraging cloud computing, data analytics, and emerging technologies, we enable organizations to adapt to changing market dynamics and unlock new opportunities.
                     </p>
                   </div>
                 </li>
@@ -215,7 +214,7 @@
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Cloud Solutions: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      We leverage the power of cloud technology to provide scalable and flexible solutions that meet
+                      We leverage the power of cloud technology to provide scalable and flexible solutions that meet your business needs. Our cloud solutions enable you to access resources on-demand, reduce infrastructure costs, and improve collaboration across your organization.
                     </p>
                   </div>
                 </li>
@@ -327,7 +326,7 @@
               <p>Securely store and protect your valuable data in the cloud. Our cloud storage and backup services offer scalable, reliable, and highly available solutions. Safeguard your critical information, ensure business continuity, and recover quickly from any unforeseen incidents.</p>
             </div>
           </div>
-<br>
+
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
@@ -336,7 +335,6 @@
             </div>
           </div>
 
-          <br>
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
@@ -350,8 +348,8 @@
       </div>
     </section>
     <!-- End Services Section -->
-    <h1></h1>
-     <section id="careers" class="cta">
+
+    <section id="careers" class="cta">
       <div class="container" data-aos="zoom-in">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
@@ -746,14 +744,15 @@
                 <p><a href="tel:+01618795090">+01618795090</a></p>
               </div>
 
-              <div class="phone" style="overflow:none">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1189.1805170049377!2d-2.2292595038975276!3d53.40836907972742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb2f4199edea7%3A0x2477218b09f05490!2sTowers%20Business%20Park%2C%20Wilmslow%20Rd%2C%20Didsbury%2C%20Manchester%20M20%202RY%2C%20UK!5e0!3m2!1sen!2sin!4v1691226522177!5m2!1sen!2sin" width="100%" height="290px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>              </div>
+              <div class="phone">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1189.1805170049377!2d-2.2292595038975276!3d53.40836907972742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb2f4199edea7%3A0x2477218b09f05490!2sTowers%20Business%20Park%2C%20Wilmslow%20Rd%2C%20Didsbury%2C%20Manchester%20M20%202RY%2C%20UK!5e0!3m2!1sen!2sin!4v1691226522177!5m2!1sen!2sin" width="100%" height="290px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
+            </div>
 
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form method="post" role="form" class="php-email-form" id="contactform" onSubmit="return submitForm(event)">
+            <form method="post" role="form" class="php-email-form" id="contactform" onSubmit="return submitform(event)">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -778,7 +777,7 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
         
-              <div class="text-center"> <button type="submit" class="g-recaptcha" 
+              <div class="text-center"> <button type="submit" class="btn btn-primary g-recaptcha" 
                         data-sitekey="6LfFOMomAAAAAFduLfJ2Ldv1pj60DX9mL6d5itwI" 
                         data-callback='submitform' 
                         data-action='submit'>Submit</button></div>
@@ -988,35 +987,41 @@
 </script>
    
      <script>
-     
-        
-          function submitform(e) {
-            e.preventDefault();
-            grecaptcha.ready(function() {
-            grecaptcha.execute('6LfFOMomAAAAAFduLfJ2Ldv1pj60DX9mL6d5itwI', {action: 'submit'}).then(
-                function(token) {
-                                             var email = $("#email").val();
-                      var message = $("#message").val();
-                      var name = $("#name").val();
-                      var recaptchaResponse = grecaptcha.getResponse();
-                    
-                      $.ajax({
-                        url: "mailer.php",
-                        type: "POST",
-                        data: {
-                          email: email,
-                          message: message,
-                          name : name,
-                          'g-recaptcha-response': recaptchaResponse
-                        },
-                        success: function(data) {
-                          alert(data);
-                        }
-                      });   
-                }
-            );
-            });
-          }
+     function submitform(e) {
+       e.preventDefault();
+       grecaptcha.ready(function() {
+         grecaptcha.execute('6LfFOMomAAAAAFduLfJ2Ldv1pj60DX9mL6d5itwI', {action: 'submit'}).then(
+           function(token) {
+             var email = document.getElementById("email").value;
+             var message = document.querySelector("textarea[name='message']").value;
+             var name = document.getElementById("name").value;
+             var subject = document.getElementById("subject").value;
+             var recaptchaResponse = grecaptcha.getResponse();
+             
+             var formData = new FormData();
+             formData.append('email', email);
+             formData.append('message', message);
+             formData.append('name', name);
+             formData.append('subject', subject);
+             formData.append('g-recaptcha-response', recaptchaResponse);
+             
+             fetch("mailer.php", {
+               method: "POST",
+               body: formData
+             })
+             .then(response => response.text())
+             .then(data => {
+               alert(data);
+               document.getElementById("contactform").reset();
+             })
+             .catch(error => {
+               alert("Error: " + error);
+             });
+           }
+         );
+       });
+       return false;
+     }
     </script>
 
 <div id="cookie-banner" style="
@@ -1034,11 +1039,11 @@ display: none;">
       <a href="cookies.html" style="color:#f9c74f;">Learn more</a>
     </p>
     <div class="mt-2 mt-md-0">
-      <button class="btn btn-success btn-sm me-2" onclick="acceptCookies()">Accept</button>
-      <button class="btn btn-outline-light btn-sm" onclick="rejectCookies()">Reject</button>
+      <button class="btn btn-success btn-sm me-2" onclick="acceptAllCookies()">Accept</button>
+      <button class="btn btn-outline-light btn-sm" onclick="rejectAllCookies()">Reject</button>
     </div>
   </div>
-</div>R
+</div>
 
 </body>
 
